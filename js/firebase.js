@@ -23,6 +23,8 @@ import {getDatabase, ref, set} from "https://www.gstatic.com/firebasejs/9.17.2/f
   btnsubmit.addEventListener('click', (e) => {
 
     var username = document.getElementById('name').value;
+    var password = document.getElementById('password').value;
+    var cnpj = document.getElementById('cnpj').value;
     
     set(ref(database, 'users/'+ username,'password/'+ password,'cnpj/'+ cnpj ), {
         username: username,
