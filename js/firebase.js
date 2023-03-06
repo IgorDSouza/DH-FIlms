@@ -24,8 +24,10 @@ import {getDatabase, ref, set} from "https://www.gstatic.com/firebasejs/9.17.2/f
 
     var username = document.getElementById('name').value;
     
-    set(ref(database, 'users/'+ username), {
-        username: username
+    set(ref(database, 'users/'+ username,'password/'+ password,'cnpj/'+ cnpj ), {
+        username: username,
+        password: password,
+        cnpj: cnpj
     }).then(() => {
     // Data saved successfully!
     alert('data submitted');
