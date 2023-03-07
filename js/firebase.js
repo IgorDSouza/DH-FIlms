@@ -18,7 +18,6 @@ import {getDatabase, ref, set} from "https://www.gstatic.com/firebasejs/9.17.2/f
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
   const btnsubmit = document.getElementById('btnsubmit');
-  var id = 0;
 
   
   btnsubmit.addEventListener('click', (e) => {
