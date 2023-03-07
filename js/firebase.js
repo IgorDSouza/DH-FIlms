@@ -42,7 +42,7 @@ import {getDatabase, ref, set, get, child} from "https://www.gstatic.com/firebas
   });
     const dbRef = ref(getDatabase());
 
-    get(child(dbRef, `id/0`)).then((snapshot) => {
+    get(child(dbRef, `id`)).then((snapshot) => {
       if (snapshot.exists()) {
         console.log(snapshot.val());
       } else {
