@@ -26,7 +26,7 @@ import {getDatabase, ref, set, get, child} from "https://www.gstatic.com/firebas
     var password = document.getElementById('password').value;
     var cnpj = document.getElementById('cnpj').value;
     
-    set(ref(database, 'id/'+ id, 'users/'+ username,'password/'+ password,'cnpj/'+ cnpj ), {
+    set(ref(database, 'id/'+ id ), {
         id:id++,
         username: username,
         password: password,
@@ -39,7 +39,7 @@ import {getDatabase, ref, set, get, child} from "https://www.gstatic.com/firebas
         // The write failed...
         alert(error);
     });
-
+  });
     const dbRef = ref(getDatabase());
 
     get(child(dbRef, `id/0`)).then((snapshot) => {
@@ -50,4 +50,3 @@ import {getDatabase, ref, set, get, child} from "https://www.gstatic.com/firebas
       }}).catch((error) => {
       console.error(error);
     });
-});
