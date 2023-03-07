@@ -39,5 +39,15 @@ import {getDatabase, ref, set} from "https://www.gstatic.com/firebasejs/9.17.2/f
         // The write failed...
         alert(error);
     });
-            
+    
+    const dbRef = ref(getDatabase());
+
+    get(child(dbRef, `id/0`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val());
+      } else {
+        console.log("No data available");
+      }}).catch((error) => {
+      console.error(error);
+    });
 });
