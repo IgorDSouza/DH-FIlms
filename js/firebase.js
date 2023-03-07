@@ -44,7 +44,7 @@ import {getDatabase, ref, set, get, child} from "https://www.gstatic.com/firebas
 
     get(child(dbRef, `id`)).then((snapshot) => {
       if (snapshot.exists()) {
-        console.log(snapshot.val());
+        console.log(snapshot.val().id);
       } else {
         console.log("No data available");
       }}).catch((error) => {
